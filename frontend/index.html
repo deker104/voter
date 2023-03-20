@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Голосовалка</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+</head>
+<body>
+    <div class="content">
+        <div class="header">
+            <img src="static/dshindov_chat.jpeg" alt="дшиндов_чат" class="pfp">
+            <h1>Выборы главного админа в dshindov_chat</h1>
+        </div>
+        <p>Выборы проходят по системе <a href="https://en.wikipedia.org/wiki/Instant-runoff_voting">instant-runoff voting</a>. В своём бюллетене вам нужно будет выбрать несколько кандидатов и упорядочить их по убыванию приоритета. Изначально кандидаты ранжируются по количеству бюллетеней, в которых их выбрали первыми. Если же по этим результатам не вышло определить победителя, то кандидат с наименьшим количеством голосов выбывает, и голоса идут тем кандидатам, которые были выбраны в бюллетенях вторыми. Так продолжается, пока у кого-то из кандидатов не наберётся более 50% голосов.</p>
+        <h2 style="text-align: center;">Ваш бюллетень:</h2>
+        <div class="sortable" id="bulletin">
+        </div>
+        <h2 style="text-align: center;">Доступные кандидаты:</h2>
+        <div class="sortable" id="available">
+            <div class="candidate" data-id="1">Кракадила</div>
+            <div class="candidate" data-id="2">Valeriy</div>
+            <div class="candidate" data-id="3">Кираашадо</div>
+            <div class="candidate" data-id="4">Андрей Грицаев</div>
+            <div class="candidate" data-id="5">Георгий Шамтеев</div>
+            <div class="candidate" data-id="6">Elk Cloner</div>
+            <div class="candidate" data-id="7">Аскар @fallnlove</div>
+            <div class="candidate" data-id="8">Степан @sadfun</div>
+            <div class="candidate" data-id="9">Максим Альжанов</div>
+            <div class="candidate" data-id="10">Дарья Фомина</div>
+        </div>
+        <script async src="https://telegram.org/js/telegram-widget.js?21" data-telegram-login="dshindov_vote_bot" data-size="large" data-onauth="onTelegramAuth(user)"></script>
+        <button type="submit" id="submit" onclick="submitVote()" style="display: none;">Отправить бюллетень</button>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
